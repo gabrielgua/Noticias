@@ -1,0 +1,21 @@
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="www.thymeleaf.org">
+
+    <nav th:fragment="cabecalho" style="background: #343a40;" class="rounded-bottom container navbar navbar-expand-lg sticky-top shadow navbar-dark p-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" th:href="@{/noticia/todos}">Notícias</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav me-auto mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/noticia/cadastro}">Nova Notícia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/categoria/todos}">Categorias</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+</html>

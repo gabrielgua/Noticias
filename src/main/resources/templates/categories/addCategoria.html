@@ -1,0 +1,25 @@
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="corpo">
+    <div class="container p-0">
+        <div style="background: #343a40;" class="container p-3 shadow rounded">
+            <div style="background: #212529; width: fit-content" class="p-3 rounded-top mb-0">
+                <h1 class="text-white">Cadastro de Categorias</h1>
+            </div>
+
+            <div class="rounded-end rounded-bottom p-3" style="background: #212529;">
+                <form th:action="${categoria.id == null} ? @{/categoria/save} : @{/categoria/editar}" th:object="${categoria}" method="post">
+                    <input type="hidden" th:field="*{id}">
+
+                    <label class="form-label text-white" for="nome">Nome</label>
+                    <input required class="form-control bg-dark text-white mb-3" type="text" id="nome" th:field="*{nome}">
+
+                    <button class="btn btn-outline-primary" type="submit">Salvar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</html>

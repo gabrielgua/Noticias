@@ -1,0 +1,34 @@
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="corpo">
+    <div class="container p-0">
+        <div style="background: #343a40;" class="container p-3 shadow rounded">
+            <div style="background: #212529; width: fit-content" class="p-3 rounded-top mb-0">
+                <h1 class="text-white">Cadastro de Notícias</h1>
+            </div>
+
+            <div class="rounded-end rounded-bottom p-3" style="background: #212529;">
+                <form th:action="${noticia.id == null} ? @{/noticia/save} : @{/noticia/editar}" th:object="${noticia}" method="post">
+                    <input type="hidden" th:field="*{id}">
+                    <label class="form-label text-white" for="titulo">Título</label>
+                    <input required class="form-control bg-dark text-white mb-3" type="text" id="titulo" th:field="*{titulo}">
+
+                    <label class="form-label text-white" for="categoria">Categoria</label>
+                    <select required class="form-select bg-dark text-white mb-3" type="categoria" id="categoria" th:field="*{categoria}">
+                        <th:block th:each="categoria : ${listaCategoria}">
+                            <option th:value="${categoria.id}" th:text="${categoria.nome}"></option>
+                        </th:block>
+                    </select>
+
+                    <label class="form-label text-white" for="conteudo">Conteúdo</label>
+                    <textarea required class="form-control bg-dark text-white mb-3" id="conteudo" th:field="*{conteudo}"/>
+
+                    <button class="btn btn-outline-primary" type="submit">Salvar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+</html>

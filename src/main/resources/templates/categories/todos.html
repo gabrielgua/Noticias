@@ -1,0 +1,41 @@
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="corpo">
+    <div style="background: #343a40;" class="container px-3 py-3 shadow rounded">
+        <div style="background: #212529; width: fit-content" class="p-3 rounded-top mb-0">
+            <h1 class="text-white">Categorias</h1>
+        </div>
+        <div class="rounded-bottom rounded-end p-3 mb-0" style="background: #212529;">
+            <div class="d-flex">
+                <a class="btn btn-outline-primary text-decoration-none" th:href="@{/categoria/cadastro}">Nova Categoria</a>
+                <p th:text="${message}" class="text-success mx-3 my-2"/>
+            </div>
+            <hr style="background: white">
+            <div th:if="${listaCategorias.empty}">
+                <div class="text-warning">Nenhuma Categoria.</div>
+            </div>
+            <table th:if="${!listaCategorias.empty}" class="table table-dark table-striped">
+                <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>NOME</td>
+                    <td>AÇÃO</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="categoria : ${listaCategorias}">
+                    <td th:text="${categoria.id}"></td>
+                    <td th:text="${categoria.nome}"></td>
+                    <td>
+                        <a class="link-primary text-decoration-none" th:href="@{/categoria/editar/{id}(id=${categoria.id})}">Editar</a>
+                        |
+                        <a class="link-danger text-decoration-none" th:href="@{/categoria/remover/{id}(id=${categoria.id})}">Remover</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+</div>
+</html>
