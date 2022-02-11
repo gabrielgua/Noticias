@@ -36,5 +36,5 @@ services:
 volumes:
   noticias:
 ```
-> @Gabriel Guaitanele Niszczak
+> @gabrielgua
 
