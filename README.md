@@ -1,5 +1,5 @@
 # Noticias
-CRUD simples de Notícias em uma aplicação utilizando
+CRUD simples de Notícias em uma aplicação utilizando:
  - Spring Boot
  - Spring Data JPA
  - Hibernate
